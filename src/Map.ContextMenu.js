@@ -224,9 +224,8 @@ L.Map.ContextMenu = L.Handler.extend({
 
 			if (item.id === id) {
 				el = item.el;
-				callback = item.callback;
 
-				if (callback) {
+				if (item.callback) {
 					L.DomEvent
 						.off(el, 'mouseover', this._onItemMouseOver, this)
 						.off(el, 'mouseover', this._onItemMouseOut, this)
