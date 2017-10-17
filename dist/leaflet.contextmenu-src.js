@@ -198,7 +198,7 @@ L.Map.ContextMenu = L.Handler.extend({
 
 	_createItems: function () {
 		var itemOptions = this._map.options.contextmenuItems,
-		    item,
+		    // item,
 		    i, l;
 
 		for (i = 0, l = itemOptions.length; i < l; i++) {
@@ -283,7 +283,7 @@ L.Map.ContextMenu = L.Handler.extend({
 		    disabledCls = L.Map.ContextMenu.BASE_CLS + '-item-disabled',
 		    hideOnSelect = (hideOnSelect !== undefined) ? hideOnSelect : true;
 		
-		return function (e) {
+		return function () {
 			if (L.DomUtil.hasClass(el, disabledCls)) {
 				return;
 			}
@@ -425,7 +425,7 @@ L.Map.ContextMenu = L.Handler.extend({
 		return size;
 	},
 
-	_onMouseDown: function (e) {
+	_onMouseDown: function () {
 		this._hide();
 	},
 
