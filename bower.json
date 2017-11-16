@@ -2,21 +2,23 @@
   "name": "leaflet.contextmenu",
   "homepage": "https://github.com/aratcliffe/Leaflet.contextmenu",
   "description": "A context menu for Leaflet",
-  "main": [
-      "dist/leaflet.contextmenu.js",
-      "dist/leaflet.contextmenu-src.js",
-      "dist/leaflet.contextmenu.css"
-  ],
+  "main": ["dist/leaflet.contextmenu.js", "dist/leaflet.contextmenu.css"],
   "keywords": [
     "gis"
   ],
   "license": "MIT",
   "ignore": [
-    "**/.*",
     "src",
-    "examples"
+    "examples",
+    "package.json",
+    "bower.json",
+    ".DS_Store",
+    ".git",
+    ".gitingore",
+    ".editorconfig",
+    "README.md"
   ],
   "dependencies": {
-      "leaflet": "0.7.x"
+      "leaflet": "1.x"
   }
 }
