@@ -61,7 +61,7 @@ L.Mixin.ContextMenu = {
 
             this._map.once('contextmenu.hide', this._hideContextMenu, this);
 
-            this._map.contextmenu.showAt(pt, data);
+            this._map.contextmenu.showAt(pt, data, e);
         }
     },
 

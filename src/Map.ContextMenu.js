@@ -70,11 +70,11 @@ L.Map.ContextMenu = L.Handler.extend({
         }, this);
     },
 
-    showAt: function (point, data) {
+    showAt: function (point, data, relatedEvent) {
         if (point instanceof L.LatLng) {
             point = this._map.latLngToContainerPoint(point);
         }
-        this._showAtPoint(point, data);
+        this._showAtPoint(point, data, relatedEvent);
     },
 
     hide: function () {
@@ -329,10 +329,10 @@ L.Map.ContextMenu = L.Handler.extend({
     },
 
     _show: function (e) {
-        this._showAtPoint(e.containerPoint, e);
+        this._showAtPoint(e.containerPoint, null, e);
     },
 
-    _showAtPoint: function (pt, data) {
+    _showAtPoint: function (pt, data, relatedEvent) {
         if (this._items.length) {
             var map = this._map,
             layerPoint = map.containerPointToLayerPoint(pt),
@@ -344,6 +344,10 @@ L.Map.ContextMenu = L.Handler.extend({
                 layerPoint: layerPoint,
                 containerPoint: pt
             };
+
+            if (relatedEvent) {
+                this._showLocation.relatedEvent = relatedEvent;
+            }
 
             if (data && data.relatedTarget){
                 this._showLocation.relatedTarget = data.relatedTarget;
